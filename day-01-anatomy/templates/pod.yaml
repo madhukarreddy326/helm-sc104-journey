@@ -2,6 +2,10 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: {{ .Values.image.repository }}-pod
+  annotations:
+    # 1. QUOTE: Wraps the value in quotes. Safe for numbers/booleans.
+    # If .Values.timestamp is 123456, this becomes "123456"
+    build-id: {{ .Values.buildID | default "0000" | quote }}
   labels:
     app: anatomy-test
     generator: helm
@@ -14,4 +18,9 @@ spec:
         - containerPort: {{ .Values.service.port }}
       env:
         - name: WELCOME_MESSAGE
-          value: "{{ .Values.customMessage }}"
+          # 2. DEFAULT: If 'customMessage' is deleted from values.yaml, 
+          # this will print "Welcome User" instead of crashing.
+          value: {{ .Values.customMessage | default "Welcome User" | quote }}
+        - name: ENVIRONMENT_TYPE
+          # 3. PIPELINE: Takes 'dev', turns it into 'DEV', and quotes it.
+          value: {{ .Values.environment | default "dev" | upper | quote }}

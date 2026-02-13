@@ -8,7 +8,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | :--- | :--- | :--- | :--- |
 | **01** | **Chart Anatomy (Manual Build)** | ✅ Done | Built a chart without `helm create` to understand the minimal required structure (`Chart.yaml` + `templates/`). |
 | 02 | Values & Injection | ⏳ Pending | ... |
-| 03 | Functions & Pipelines | ⏳ Pending | ... |
+| **03** | **Functions & Pipelines** | ✅ Done | mastered `quote`, `default`, and `upper` pipelines. Added CHANGELOG and semantic versioning. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run Day 1
