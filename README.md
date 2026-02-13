@@ -11,10 +11,11 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **03** | **Functions & Pipelines** | ✅ Done | mastered `quote`, `default`, and `upper` pipelines. Added CHANGELOG and semantic versioning. |
 ... (You can add the rest of the 14 days here )
 
-## 🚀 How to Run Day 1
-```bash
-# Clone the repo
-git clone [https://github.com/YOUR_USERNAME/helm-sc104-journey.git](https://github.com/YOUR_USERNAME/helm-sc104-journey.git)
+## 🚀 How to Run (Current Version v0.1.1)
 
-# Install the Day 1 chart
-helm install day-01 ./day-01-anatomy
+Since this chart creates a Pod, you can run it in any cluster (Minikube, Kind, etc.).
+
+### 1. Basic Install (Uses Defaults)
+This uses the values defined in `values.yaml`.
+```bash
+helm install my-release ./day-01-anatomy
