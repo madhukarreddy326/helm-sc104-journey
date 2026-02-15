@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ .Values.image.repository }}-config
   labels:
-    app: anatomy-test
+    {{- include "anatomy.labels" . | nindent 4 }}
 data:
   # This data is only relevant if the feature is enabled
   # 1. Simple List Loop

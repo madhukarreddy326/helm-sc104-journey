@@ -7,8 +7,8 @@ metadata:
     # If .Values.timestamp is 123456, this becomes "123456"
     build-id: {{ .Values.buildID | default "0000" | quote }}
   labels:
-    app: anatomy-test
-    generator: helm
+    {{- include "anatomy.labels" . | nindent 4 }}
+
 spec:
   containers:
     - name: main-container

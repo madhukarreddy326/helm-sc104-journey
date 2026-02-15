@@ -11,6 +11,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **03** | **Functions & Pipelines** | ✅ Done | mastered `quote`, `default`, and `upper` pipelines. Added CHANGELOG and semantic versioning. |
 | **04** | **Flow Control (If/Else)** | ✅ Done | Created an optional ConfigMap using `{{- if }}` logic. Learned about whitespace control (`-`). |
 | **05** | **Ranges (Loops)** | ✅ Done | Used `range` to iterate over lists and generate repeated configuration data. |
+| **06** | **Named Templates (_helpers)** | ✅ Done | Moved reusable logic to `_helpers.tpl` and used `include` with `nindent` to keep manifests clean. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -36,3 +37,10 @@ helm template check-enabled ./day-01-anatomy --set enableConfigMap=true
 ```bash
 # Verify the loop output
 helm template check-loops ./day-01-anatomy
+
+### 🏷️ Day 6: Named Templates
+*Goal: Verify that labels are generated consistently across all files.*
+
+```bash
+# Check the labels section of the Pod
+helm template check-labels ./day-01-anatomy | grep -A 4 "labels:"

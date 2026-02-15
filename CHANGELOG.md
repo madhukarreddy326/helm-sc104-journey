@@ -23,3 +23,8 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Added
 - Implemented `range` loops to iterate over lists in `values.yaml`.
 - Added example of looping through strings and objects.
+
+## [0.1.4] - Day 6: Named Templates
+### Changed
+- Refactored `pod.yaml` and `configmap.yaml` to use `_helpers.tpl`.
+- Centralized label logic using `define` and `include`.
