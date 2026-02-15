@@ -1,0 +1,12 @@
+{{- if .Values.enableConfigMap }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.image.repository }}-config
+  labels:
+    app: anatomy-test
+data:
+  # This data is only relevant if the feature is enabled
+  extra-settings: "enabled"
+  ui-color: "blue"
+{{- end }}

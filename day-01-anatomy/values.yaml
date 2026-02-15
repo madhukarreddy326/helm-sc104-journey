@@ -14,3 +14,11 @@ service:
 
 # This is a custom value we will use to test injection
 customMessage: "Hello from Day 2 Values!"
+# Day 4: Flow Control
+# detailedConfig:
+#   enabled: true
+#   data:
+#     color: blue
+
+# Let's set a default to FALSE to prove it doesn't create by default.
+enableConfigMap: false
