@@ -7,6 +7,18 @@ metadata:
     app: anatomy-test
 data:
   # This data is only relevant if the feature is enabled
+  # 1. Simple List Loop
+  # We loop through 'dbUsers'. Inside the loop, '.' is the username string.
   extra-settings: "enabled"
   ui-color: "blue"
+  users.txt: |
+    {{- range .Values.dbUsers }}
+    - {{ . | quote }}
+    {{- end }}
+  # 2. Object List Loop
+  # We loop through 'environmentVars'. Inside, '.' is the object (so we use .name and .value)
+  config.properties: |
+    {{- range .Values.environmentVars }}
+    {{ .name }}={{ .value }}
+    {{- end }}
 {{- end }}

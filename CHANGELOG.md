@@ -17,3 +17,9 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Added
 - Initial chart structure created manually.
 - Basic Pod template.
+
+
+## [0.1.3] - Day 5: Ranges & Loops
+### Added
+- Implemented `range` loops to iterate over lists in `values.yaml`.
+- Added example of looping through strings and objects.

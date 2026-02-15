@@ -22,3 +22,17 @@ customMessage: "Hello from Day 2 Values!"
 
 # Let's set a default to FALSE to prove it doesn't create by default.
 enableConfigMap: false
+
+# Day 5: Loops
+# A list of strings
+dbUsers:
+  - "admin"
+  - "reader"
+  - "writer"
+
+# A list of objects (key-value pairs)
+environmentVars:
+  - name: LOG_LEVEL
+    value: "debug"
+  - name: API_KEY
+    value: "12345-secret"

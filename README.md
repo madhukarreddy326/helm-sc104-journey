@@ -10,6 +10,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **02** | **Values & Injection** | ✅ Done | Extracted hardcoded values into `values.yaml` and injected them using `{{ .Values.key }}` syntax. |
 | **03** | **Functions & Pipelines** | ✅ Done | mastered `quote`, `default`, and `upper` pipelines. Added CHANGELOG and semantic versioning. |
 | **04** | **Flow Control (If/Else)** | ✅ Done | Created an optional ConfigMap using `{{- if }}` logic. Learned about whitespace control (`-`). |
+| **05** | **Ranges (Loops)** | ✅ Done | Used `range` to iterate over lists and generate repeated configuration data. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -29,3 +30,9 @@ helm template check-default ./day-01-anatomy
 
 # 2. Enabled (ConfigMap is created)
 helm template check-enabled ./day-01-anatomy --set enableConfigMap=true
+### 🔄 Day 5: Loops
+*Goal: Generate multiple lines of config from a single list.*
+
+```bash
+# Verify the loop output
+helm template check-loops ./day-01-anatomy
