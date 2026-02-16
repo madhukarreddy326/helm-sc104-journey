@@ -36,3 +36,16 @@ environmentVars:
     value: "debug"
   - name: API_KEY
     value: "12345-secret"
+
+# Day 7: Dependency Configuration
+# This name 'redis' MUST match the name in Chart.yaml
+redis:
+  enabled: true  # This triggers the 'condition' we set in Chart.yaml
+
+  # We are overriding the Bitnami Redis values here
+  architecture: standalone
+  auth:
+    enabled: false  # Disable password for easier testing
+  master:
+    persistence:
+      enabled: false # meaningful for testing so we don't need PVs

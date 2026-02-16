@@ -2,5 +2,12 @@ apiVersion: v2
 name: day-01-anatomy
 description: A manual chart built from scratch for SC104 study
 type: application
-version: 0.1.4
+version: 0.1.5
 appVersion: "1.16.0"
+
+# Day 7: Dependencies
+dependencies:
+  - name: redis
+    version: 17.3.14  # We pick a specific version to be safe
+    repository: https://charts.bitnami.com/bitnami
+    condition: redis.enabled  # We will use this to turn it on/off later

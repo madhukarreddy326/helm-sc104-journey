@@ -28,3 +28,8 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Changed
 - Refactored `pod.yaml` and `configmap.yaml` to use `_helpers.tpl`.
 - Centralized label logic using `define` and `include`.
+
+## [0.1.5] - Day 7: Dependencies
+### Added
+- Added `bitnami/redis` as a subchart dependency.
+- Configured Redis to run in standalone mode via `values.yaml`.

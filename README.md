@@ -12,6 +12,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **04** | **Flow Control (If/Else)** | ✅ Done | Created an optional ConfigMap using `{{- if }}` logic. Learned about whitespace control (`-`). |
 | **05** | **Ranges (Loops)** | ✅ Done | Used `range` to iterate over lists and generate repeated configuration data. |
 | **06** | **Named Templates (_helpers)** | ✅ Done | Moved reusable logic to `_helpers.tpl` and used `include` with `nindent` to keep manifests clean. |
+| **07** | **Dependencies (Subcharts)** | ✅ Done | Integrated `bitnami/redis` into the chart and learned how to override child values from the parent. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -44,3 +45,13 @@ helm template check-loops ./day-01-anatomy
 ```bash
 # Check the labels section of the Pod
 helm template check-labels ./day-01-anatomy | grep -A 4 "labels:"
+
+### 📦 Day 7: Subcharts (Redis)
+*Goal: Deploy a database alongside our app.*
+
+```bash
+# 1. Download the dependency (Required before installing)
+helm dependency update ./day-01-anatomy
+
+# 2. Check the output
+helm template check-redis ./day-01-anatomy | grep "Source:"
