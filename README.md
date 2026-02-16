@@ -13,6 +13,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **05** | **Ranges (Loops)** | ✅ Done | Used `range` to iterate over lists and generate repeated configuration data. |
 | **06** | **Named Templates (_helpers)** | ✅ Done | Moved reusable logic to `_helpers.tpl` and used `include` with `nindent` to keep manifests clean. |
 | **07** | **Dependencies (Subcharts)** | ✅ Done | Integrated `bitnami/redis` into the chart and learned how to override child values from the parent. |
+| **08** | **Chart Hooks** | ✅ Done | Created a `pre-install` Job to simulate database backups. Mastered `hook-weight` and `hook-delete-policy`. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -55,3 +56,10 @@ helm dependency update ./day-01-anatomy
 
 # 2. Check the output
 helm template check-redis ./day-01-anatomy | grep "Source:"
+
+### ⚓ Day 8: Hooks
+*Goal: Run a specific task before the application installs.*
+
+```bash
+# Verify the hook configuration
+helm template check-hooks ./day-01-anatomy | grep "helm.sh/hook"

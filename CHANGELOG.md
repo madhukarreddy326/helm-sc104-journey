@@ -33,3 +33,8 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Added
 - Added `bitnami/redis` as a subchart dependency.
 - Configured Redis to run in standalone mode via `values.yaml`.
+
+## [0.1.6] - Day 8: Chart Hooks
+### Added
+- Implemented a `pre-install` and `pre-upgrade` hook using a Kubernetes Job.
+- Configured hook weights and auto-deletion policies (`hook-succeeded`).

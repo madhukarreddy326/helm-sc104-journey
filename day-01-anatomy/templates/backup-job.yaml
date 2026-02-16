@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-backup
+  labels:
+    {{- include "anatomy.labels" . | nindent 4 }}
+  annotations:
+    # 1. THE TRIGGER: When does this run?
+    "helm.sh/hook": pre-install,pre-upgrade
+    # 2. THE ORDER: Lower numbers run first (default is 0).
+    "helm.sh/hook-weight": "-5"
+    # 3. CLEANUP: Delete this Job after it succeeds so it doesn't clutter the cluster.
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      name: {{ .Release.Name }}-backup
+    spec:
+      containers:
+        - name: backup-tool
+          image: busybox
+          # Simulating a backup process
+          command: ["/bin/sh", "-c", "echo 'Backing up database...'; sleep 5; echo 'Backup Complete'"]
+      restartPolicy: Never
