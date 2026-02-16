@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "anatomy.name" . }}-test-connection"
+  labels:
+    {{- include "anatomy.labels" . | nindent 4 }}
+  annotations:
+    # 1. THE TRIGGER: This Pod only runs when you type 'helm test'
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      # 2. THE TEST: Try to connect to our Service on the correct port
+      command: ['wget']
+      args: ['{{ include "anatomy.name" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

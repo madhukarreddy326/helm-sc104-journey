@@ -38,3 +38,8 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Added
 - Implemented a `pre-install` and `pre-upgrade` hook using a Kubernetes Job.
 - Configured hook weights and auto-deletion policies (`hook-succeeded`).
+
+## [0.1.7] - Day 9: Chart Testing
+### Added
+- Implemented `helm test` capability using a connection test Pod.
+- Created `templates/tests/` directory for test definitions.

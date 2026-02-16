@@ -14,6 +14,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **06** | **Named Templates (_helpers)** | ✅ Done | Moved reusable logic to `_helpers.tpl` and used `include` with `nindent` to keep manifests clean. |
 | **07** | **Dependencies (Subcharts)** | ✅ Done | Integrated `bitnami/redis` into the chart and learned how to override child values from the parent. |
 | **08** | **Chart Hooks** | ✅ Done | Created a `pre-install` Job to simulate database backups. Mastered `hook-weight` and `hook-delete-policy`. |
+| **09** | **Chart Testing** | ✅ Done | Added a test Pod (`helm.sh/hook: test`) to verify application connectivity automatically. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -63,3 +64,13 @@ helm template check-redis ./day-01-anatomy | grep "Source:"
 ```bash
 # Verify the hook configuration
 helm template check-hooks ./day-01-anatomy | grep "helm.sh/hook"
+
+### 🧪 Day 9: Testing
+*Goal: Verify the application is actually serving traffic.*
+
+```bash
+# 1. Install the chart first (Tests need a running app)
+helm install day9-release ./day-01-anatomy
+
+# 2. Run the test
+helm test day9-release
