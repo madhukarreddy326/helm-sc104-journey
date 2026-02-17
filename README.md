@@ -15,6 +15,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **07** | **Dependencies (Subcharts)** | ✅ Done | Integrated `bitnami/redis` into the chart and learned how to override child values from the parent. |
 | **08** | **Chart Hooks** | ✅ Done | Created a `pre-install` Job to simulate database backups. Mastered `hook-weight` and `hook-delete-policy`. |
 | **09** | **Chart Testing** | ✅ Done | Added a test Pod (`helm.sh/hook: test`) to verify application connectivity automatically. |
+| **10** | **Packaging** | ✅ Done | Created versioned `.tgz` artifacts via `helm package`. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -74,3 +75,20 @@ helm install day9-release ./day-01-anatomy
 
 # 2. Run the test
 helm test day9-release
+
+## 🚀 How to Run (Cumulative)
+
+### 📦 Day 10: Packaging & Verification
+*Goal: Validate the chart code and package it into a distributable artifact.*
+
+**1. Lint the Chart**
+We use `--strict` to fail on any warnings (best practice for CI/CD).
+```bash
+helm lint ./day-01-anatomy --strict
+# Expected Output: 
+# [INFO] Chart.yaml: icon is recommended
+# 1 chart(s) linted, 0 chart(s) failed
+helm package ./day-01-anatomy
+# Result: Creates 'day-01-anatomy-0.1.8.tgz' in the current directory.
+helm install production-release day-01-anatomy-0.1.8.tgz
+kubectl get all -l app.kubernetes.io/instance=production-release 

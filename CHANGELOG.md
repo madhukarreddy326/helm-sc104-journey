@@ -43,3 +43,9 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 ### Added
 - Implemented `helm test` capability using a connection test Pod.
 - Created `templates/tests/` directory for test definitions.
+
+## [0.1.8] - Day 10: Packaging
+### Added
+- Validated chart with `helm lint --strict`.
+- Packaged chart into versioned `.tgz` artifact.
+- Added `.gitignore` to exclude binary artifacts.

@@ -1,0 +1,3 @@
+# Ignore packaged Helm charts
+*.tgz
+*.lock

@@ -2,7 +2,7 @@ apiVersion: v2
 name: day-01-anatomy
 description: A manual chart built from scratch for SC104 study
 type: application
-version: 0.1.7
+version: 0.1.8
 appVersion: "1.16.0"
 
 # Day 7: Dependencies
