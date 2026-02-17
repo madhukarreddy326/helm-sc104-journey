@@ -1,0 +1,36 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.16.0
+dependencies:
+- - condition: redis.enabled
+  name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 17.3.14
+description: A manual chart built from scratch for SC104 study
+name: day-01-anatomy
+type: application
+version: 0.1.10
+
+...
+files:
+  day-01-anatomy-0.1.10.tgz: sha256:46efc1cf1b87d1c7f57af9c3616b01eddd72311b94dce29a2c745be9795483ea
+
+-----BEGIN PGP SIGNATURE-----
+
+wsG5BAEBCgBtBYJpk/bXCRA8lVYQrWS250UUAAAAAAAcACBzYWx0QG5vdGF0aW9u
+cy5vcGVucGdwanMub3Jn0alIi/V+hY1x66EMJ7l99VJ8NvuNEbwjhwHHY3bG5MIW
+IQRJrdbCfv/OpkePetQ8lVYQrWS25wAAtkUP+wf4xjkPAziExiS8XlpiYscc8/E7
+xFXmKjIuxC0+XLDiPeuGcNHJoH+I1No0fxqNyrs85T28UQQ44OcR3SXrDzLceCDn
+JyhHB5pRMPvVi+KkbOwcIMdsKZiRNzyQGiRfHJDyzffBJGtsII9GlxMMoMmDeWEt
+ydEdGJGOEJv1c/B8BudYfw7gobio9YkwRuaxhk5H2yVi5Xs+AwHk8WBtORhIZfbp
+QPx7rma4abm0mqV1RYWWYvWjv2wJV9DsBiJB+PHhMbk687xh/GlzdJgiX6LNQFLa
+XKLQOgqLV9qT/QtbfQYjiGg8Ndla/K+EOM9M+HnxVgt9orvRnM2u6fksbBDzQ8KN
+pjeiOinPvhKmSeBJmg7dQ/9UYdP6oz2GgyY5I9xpuNRYWPOcd2DTZFEIzSsi9Uwl
+5QXlinud5eGSIGGr4//C+LnZbXoQ4s6vh7/NAxIfqxMqFPZioISawAq7A9VYU2ax
+PO5eFMNjNpbnHHqoGBVoQVBnn30pAGVJWEns2J1TdTU0OKp4gnv2rE/jVBGEq+Ge
+Be46WRe8ILsxKte6HBpcof1ewBP7YVCT1I25w8/WtX4r9VWfoLThl6XTFfeZehbH
+UtaELLlPuw5/cY5sZbscunpS70h0ZbcYV7+m8wlg57mVb+IBrudHBYGfZw1lfkdu
+gEh0ashZkdyhQ1Tz
+-----END PGP SIGNATURE-----

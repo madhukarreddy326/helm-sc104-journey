@@ -18,6 +18,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **10** | **Packaging** | ✅ Done | Created versioned `.tgz` artifacts via `helm package`. |
 | **11** | **Repositories** | ✅ Done | Created a valid Helm Repository structure. generated `index.yaml` using `helm repo index` to map chart versions. |
 | **12** | **OCI Registries** | ✅ Done | Pushed chart to GitHub Container Registry using `helm push`. Installed using `oci://` protocol. |
+| **13** | **Provenance (Signing)** | ✅ Done | Secured the chart by signing it with GPG keys. Generated a `.prov` file and verified it using `helm verify`. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -118,3 +119,13 @@ helm push day-01-anatomy-0.1.9.tgz oci://ghcr.io/<user>
 
 # Install
 helm install oci-app oci://ghcr.io/<user>/day-01-anatomy --version 0.1.9
+
+### 🔐 Day 13: Signed Packages
+*Goal: Verify the authenticity of a chart.*
+
+```bash
+# 1. Sign and Package
+helm package --sign --key "Helm Signer" --keyring ~/.gnupg/secring.gpg ./day-01-anatomy
+
+# 2. Verify the Signature
+helm verify --keyring ~/.gnupg/pubring.gpg day-01-anatomy-0.1.10.tgz

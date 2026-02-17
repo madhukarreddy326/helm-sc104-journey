@@ -2,3 +2,6 @@
 *.lock
 # ...EXCEPT inside the repo folder (We want to publish these!)
 !repo/*.tgz
+*.prov  # <--- Add this line
+*.tgz
+*.lock

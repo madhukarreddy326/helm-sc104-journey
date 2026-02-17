@@ -61,3 +61,9 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 - Bumped version to 0.1.9.
 - Authenticated with GitHub Container Registry (GHCR).
 - Pushed chart using `helm push` (OCI mode).
+## [0.1.10] - Day 13: Chart Signing
+### Added
+- Bumped version to 0.1.10.
+- Generated GPG keys for artifact signing.
+- Packaged chart with `--sign` flag to generate `.prov` provenance file.
+- Verified chart integrity using `helm verify`.
