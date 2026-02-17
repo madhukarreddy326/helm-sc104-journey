@@ -55,3 +55,9 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 - Created `repo/` directory to serve as a local chart repository.
 - Generated `index.yaml` using `helm repo index`.
 - Updated `.gitignore` to allow tracking artifacts in `repo/`.
+
+## [0.1.9] - Day 12: OCI Registry
+### Added
+- Bumped version to 0.1.9.
+- Authenticated with GitHub Container Registry (GHCR).
+- Pushed chart using `helm push` (OCI mode).

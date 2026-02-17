@@ -17,6 +17,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **09** | **Chart Testing** | ✅ Done | Added a test Pod (`helm.sh/hook: test`) to verify application connectivity automatically. |
 | **10** | **Packaging** | ✅ Done | Created versioned `.tgz` artifacts via `helm package`. |
 | **11** | **Repositories** | ✅ Done | Created a valid Helm Repository structure. generated `index.yaml` using `helm repo index` to map chart versions. |
+| **12** | **OCI Registries** | ✅ Done | Pushed chart to GitHub Container Registry using `helm push`. Installed using `oci://` protocol. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -104,3 +105,16 @@ helm repo index repo/
 # 2. Verify the index content
 cat repo/index.yaml
 # Look for 'version: 0.1.8' and 'urls: [day-01-anatomy-0.1.8.tgz]'
+
+### ☁️ Day 12: OCI Install
+*Goal: Install from a Docker-compatible registry.*
+
+```bash
+# Login (One time)
+echo $CR_PAT | helm registry login ghcr.io -u <user> --password-stdin
+
+# Push
+helm push day-01-anatomy-0.1.9.tgz oci://ghcr.io/<user>
+
+# Install
+helm install oci-app oci://ghcr.io/<user>/day-01-anatomy --version 0.1.9
