@@ -49,3 +49,9 @@ All notable changes to the "day-01-anatomy" chart will be documented in this fil
 - Validated chart with `helm lint --strict`.
 - Packaged chart into versioned `.tgz` artifact.
 - Added `.gitignore` to exclude binary artifacts.
+
+## [Day 11] - Repository Indexing
+### Added
+- Created `repo/` directory to serve as a local chart repository.
+- Generated `index.yaml` using `helm repo index`.
+- Updated `.gitignore` to allow tracking artifacts in `repo/`.

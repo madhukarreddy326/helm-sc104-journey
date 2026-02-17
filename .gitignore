@@ -1,3 +1,4 @@
 # Ignore packaged Helm charts
-*.tgz
 *.lock
+# ...EXCEPT inside the repo folder (We want to publish these!)
+!repo/*.tgz

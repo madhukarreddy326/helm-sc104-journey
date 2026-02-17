@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  day-01-anatomy:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2026-02-17T04:37:44.467572644Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 17.3.14
+    description: A manual chart built from scratch for SC104 study
+    digest: d5d559bcd305e5400af541cc1cc8ec0f9e90feee68ef489401a517dcec10f873
+    name: day-01-anatomy
+    type: application
+    urls:
+    - day-01-anatomy-0.1.8.tgz
+    version: 0.1.8
+generated: "2026-02-17T04:37:44.430644879Z"

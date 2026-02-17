@@ -16,6 +16,7 @@ This repository documents my 14-day "Zero to Hero" journey preparing for the **L
 | **08** | **Chart Hooks** | ✅ Done | Created a `pre-install` Job to simulate database backups. Mastered `hook-weight` and `hook-delete-policy`. |
 | **09** | **Chart Testing** | ✅ Done | Added a test Pod (`helm.sh/hook: test`) to verify application connectivity automatically. |
 | **10** | **Packaging** | ✅ Done | Created versioned `.tgz` artifacts via `helm package`. |
+| **11** | **Repositories** | ✅ Done | Created a valid Helm Repository structure. generated `index.yaml` using `helm repo index` to map chart versions. |
 ... (You can add the rest of the 14 days here )
 
 ## 🚀 How to Run (Current Version v0.1.1)
@@ -92,3 +93,14 @@ helm package ./day-01-anatomy
 # Result: Creates 'day-01-anatomy-0.1.8.tgz' in the current directory.
 helm install production-release day-01-anatomy-0.1.8.tgz
 kubectl get all -l app.kubernetes.io/instance=production-release 
+
+### 📚 Day 11: The Repo Index
+*Goal: Understand how Helm finds charts.*
+
+```bash
+# 1. Create the index
+helm repo index repo/
+
+# 2. Verify the index content
+cat repo/index.yaml
+# Look for 'version: 0.1.8' and 'urls: [day-01-anatomy-0.1.8.tgz]'
